@@ -44,3 +44,4 @@ class Education(models.Model):
 class Skill(models.Model):
     name = models.CharField(max_length=100)
     skillType = models.CharField(max_length=100)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
