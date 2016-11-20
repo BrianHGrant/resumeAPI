@@ -6,7 +6,7 @@ class Address(models.Model):
     street = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=2)
-    zipcode = models.IntegerField(length=5)
+    zipcode = models.IntegerField(max_length=5)
 
 class User(models.Model):
     name = models.CharField(max_length=100)
@@ -14,7 +14,7 @@ class User(models.Model):
     addressId = models.ForeignKey(Address, on_delete=models.CASCADE)
 
 class Job(models.Model):
-    title = models.models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     company = models.CharField(max_length=100)
     addressId = models.ForeignKey(Address, on_delete=models.CASCADE)
     startDate = models.DateField
